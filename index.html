@@ -4,82 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar mesa - Cuenta Clara</title>
+    <!-- Enlace a la hoja de estilos principal -->
     <link rel="stylesheet" href="stylesAgregarMesa.css">
+    <!-- Fuentes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Tarjeta principal del formulario -->
     <div class="box-card">
+        <!-- Título del formulario -->
         <div class="title">
             <h2>Agregar mesa</h2> 
         </div>
 
+        <!-- Sección de entrada de número de mesa -->
         <div class="card">
             <label for="mesa-número">Número de mesa: </label>
             <input type="text" class="card-input" id="mesa-número" placeholder="Asigna un número" required>
             <p>Elige el color de la mesa:</p>
         </div>
     
+        <!-- Selector de color para la mesa -->
         <div class="color-box">
             <div class="colores-disponibles">  
                 <div>      
-                    <button type="button" title="Gris claro" style="background-color: #DEE1E6FF; width: 30px; height: 30px;" onclick="seleccionarColor('#DEE1E6FF')"></button>
-                    <button type="button" title="Salmón pastel" style="background-color: #E78A8AFF; width: 30px; height: 30px;" onclick="seleccionarColor('#E78A8AFF')"></button>
-                    <button type="button" title="Naranja pastel" style="background-color: #E7965CFF; width: 30px; height: 30px;" onclick="seleccionarColor('#E7965CFF')"></button>
-                    <button type="button" title="Amarillo pastel" style="background-color: #FFED66FF; width: 30px; height: 30px;" onclick="seleccionarColor('#FFED66FF')"></button>
+                    <!-- Botones de colores fila 1 -->
+                    <button type="button" title="Gris claro" style="background-color: #DEE1E6FF; width: 30px; height: 30px;"></button>
+                    <button type="button" title="Salmón pastel" style="background-color: #E78A8AFF; width: 30px; height: 30px;"></button>
+                    <button type="button" title="Naranja pastel" style="background-color: #E7965CFF; width: 30px; height: 30px;"></button>
+                    <button type="button" title="Amarillo pastel" style="background-color: #FFED66FF; width: 30px; height: 30px;"></button>
                 </div>
 
                 <div>
-                    <button type="button" title="Verde pastel" style="background-color: #98E78AFF; width: 30px; height: 30px;" onclick="seleccionarColor('#98E78AFF')"></button>
-                    <button type="button" title="Morado pastel" style="background-color: #9E7CCFFF; width: 30px; height: 30px;" onclick="seleccionarColor('#9E7CCFFF')"></button>
-                    <button type="button" title="Bugambilia pastel" style="background-color: #D05392FF; width: 30px; height: 30px;" onclick="seleccionarColor('#D05392FF')"></button>
-                    <button type="button" title="Aqua pastel" style="background-color: #31A385FF; width: 30px; height: 30px;" onclick="seleccionarColor('#31A385FF')"></button>
+                    <!-- Botones de colores fila 2 -->
+                    <button type="button" title="Verde pastel" style="background-color: #98E78AFF; width: 30px; height: 30px;"></button>
+                    <button type="button" title="Morado pastel" style="background-color: #9E7CCFFF; width: 30px; height: 30px;"></button>
+                    <button type="button" title="Bugambilia pastel" style="background-color: #D05392FF; width: 30px; height: 30px;"></button>
+                    <button type="button" title="Aqua pastel" style="background-color: #31A385FF; width: 30px; height: 30px;"></button>
                 </div>
             </div>
         </div> 
         
+        <!-- Botones de acción: cancelar y guardar -->
         <div class="botones-container">
             <button type="button" class="cancelar-btn">Cancelar</button>
-            <button type="button" class="guardar-btn" id="btnGuardar">Guardar</button>
+            <!-- El label actúa como botón para activar el checkbox invisible -->
+            <label for="mostrar-mensaje" class="guardar-btn">Guardar</label>
         </div>
     </div>
 
-    <!-- Mensaje de confirmación -->
-    <div id="mensajeConfirmacion" class="mensaje-confirmacion oculto">
+    <!-- Checkbox invisible para controlar la visibilidad del mensaje de confirmación -->
+    <input type="checkbox" id="mostrar-mensaje" class="mensaje-checkbox">
+
+    <!-- Mensaje de confirmación que aparece al guardar -->
+    <div class="mensaje-confirmacion">
         <div class="mensaje-contenido">
             <p>Datos guardados.</p>
-            <button id="btnOk">OK</button>
+            <!-- El label actúa como botón OK para cerrar el mensaje -->
+            <label for="mostrar-mensaje" class="ok-btn">OK</label>
         </div>
     </div>
-
-    <script>
-        // Seleccionar color
-        function seleccionarColor(color) {
-            event.preventDefault();
-            console.log("Color seleccionado:", color);
-        }
-
-        // Mostrar mensaje de confirmación
-        document.getElementById('btnGuardar').addEventListener('click', function() {
-            // Validar que se haya ingresado un número de mesa
-            const numeroMesa = document.getElementById('mesa-número').value;
-            if (!numeroMesa) {
-                alert("Por favor ingresa un número de mesa");
-                return;
-            }
-            
-            // Mostrar mensaje
-            document.getElementById('mensajeConfirmacion').classList.remove('oculto');
-            
-            // Aquí iría el código para guardar los datos en tu base de datos o sistema
-        });
-
-        // Ocultar mensaje al hacer clic en OK
-        document.getElementById('btnOk').addEventListener('click', function() {
-            document.getElementById('mensajeConfirmacion').classList.add('oculto');
-        });
-    </script>
 </body>
 </html>

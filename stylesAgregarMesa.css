@@ -1,6 +1,7 @@
+/* Estilos generales del body */
 body {
-    font-family: Cabin, sans-serif;
-    background: #f5f5f5;
+    font-family: Cabin, sans-serif; /* Fuente principal */
+    background: #f5f5f5;            /* Color de fondo */
     margin: 0;
     padding: 20px;
     display: flex;
@@ -8,19 +9,21 @@ body {
     align-items: center;
 }
 
+/* Título principal */
 .title {
     font-family: 'Cabin', sans-serif;
     text-align: center;
     width: 50%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #043A5B;
+    background-color: #043A5B;      /* Fondo azul oscuro */
     align-items: center;
     margin: auto;
     margin-bottom: 30px;
     margin-top: -20px;
 }
 
+/* Tarjeta principal del formulario */
 .box-card {
     min-width: 50vw;
     min-height: auto;
@@ -31,6 +34,7 @@ body {
     border: 1px solid #dbdee5;
 }
 
+/* Campos de entrada del formulario */
 .card-input {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -41,12 +45,14 @@ body {
     font-size: 1rem;
 }
 
+/* Efecto al enfocar los campos de entrada */
 .card-input:focus {
     outline: none;
     border-color: #043A5BFF;
     box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
 }
 
+/* Estilo para subtítulos */
 h2 {
     font-size: 32px;
     color: white;
@@ -54,9 +60,10 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Botones principales */
+/* Botón cancelar */
 .cancelar-btn {
-    width: 48%;
+    font-family: cabin;
+    width: 45%;
     background-color: #607B92FF;
     color: white;
     border: none;
@@ -67,13 +74,97 @@ h2 {
     transition: background 0.2s;
 }
 
+/* Efecto hover para cancelar */
 .cancelar-btn:hover {
     background-color: #043A5BFF;
 }
 
+/* Contenedor de botones principales */
+.botones-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Contenedor de selección de color */
+.color-box {
+    margin: 20px 0;
+}
+
+/* Lista de colores disponibles */
+.colores-disponibles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Fila de botones de color */
+.colores-disponibles div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Botones de color (circulares) */
+.colores-disponibles button {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Efecto hover para botones de color */
+.colores-disponibles button:hover {
+    transform: scale(1.1);
+}
+
+/* Checkbox invisible para controlar la visibilidad del mensaje */
+.mensaje-checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* Mensaje de confirmación (oculto por defecto) */
+.mensaje-confirmacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Mostrar mensaje cuando el checkbox está activado */
+.mensaje-checkbox:checked ~ .mensaje-confirmacion {
+    display: flex;
+}
+
+/* Contenido del mensaje de confirmación */
+.mensaje-contenido {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+}
+
+/* Texto del mensaje de confirmación */
+.mensaje-contenido p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Botón guardar */
 .guardar-btn {
-    width: 48%;
-    background-color: rgb(82, 229, 72);
+    width: 45%;
+    background-color: rgb(82, 229, 72); /* Verde */
     color: white;
     border: none;
     padding: 0.8rem;
@@ -81,51 +172,17 @@ h2 {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
+    text-align: center;
+    display: inline-block;
 }
 
+/* Efecto hover para guardar */
 .guardar-btn:hover {
     background-color: rgb(33, 168, 30);
 }
 
-.botones-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-/* Mensaje de confirmación */
-.mensaje-confirmacion {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.mensaje-confirmacion.oculto {
-    display: none;
-}
-
-.mensaje-contenido {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.mensaje-contenido p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: black;
-}
-
-#btnOk {
+/* Botón OK del mensaje */
+.ok-btn {
     background-color: #043A5B;
     color: white;
     border: none;
@@ -133,8 +190,34 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
 }
 
-#btnOk:hover {
+/* Efecto hover para OK */
+.ok-btn:hover {
     background-color: #03283d;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .box-card {
+        min-width: 80vw;
+        padding: 30px;
+    }
+    
+    .title {
+        width: 80%;
+    }
+    
+    .colores-disponibles div {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .mensaje-contenido {
+        padding: 20px;
+        max-width: 90%;
+    }
 }
