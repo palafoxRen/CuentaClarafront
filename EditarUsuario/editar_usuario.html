@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar usuario - Cuenta Clara</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styleEditarUsuario.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="logoSinFondoCC.jpeg" alt="logo del sistema" class="logo">
+            <nav class="migas">
+            <a href="bienvenido.html">Ajustes</a> <!-- Corregir enlace para que mande a la interrfaz de ajustes -->
+            </nav>
+        </header>
+
+        <main>
+<!-- Se eliminó el bloque de texto -->  
+            <div class="signup-container">
+        <form class="signup-form">
+            <h2 class="form-title">Editar usuario</h2>
+            
+            <div class="form-group">
+                <label for="fullname">Editar nombre</label>
+                <input type="text" id="fullname" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Editar correo electrónico</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Editar contraseña</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="passwor">Editar rol*</label>
+                <label for="id">Sólo el administrador podrá autorizar esta acción </label>
+                <input type="text" id="rol" required>
+            </div> <!-- Quitar o modificar en caso de ser necesario -->
+
+                <button type="submit" class="btn">Guardar cambios</button>
+                    <!-- Nueva clase para el botón de cancelar -->
+                <button type="submit" class="cancel-btn">Cancelar</button>
+
+            </div>
+        </form>
+    </div>
+        </main>
+
+    </body>
+
+</html>
