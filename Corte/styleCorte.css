@@ -238,44 +238,61 @@ h2 {
     color: #FFFFFFFF; /*color de la letra*/
 }
 
-/* Estilos para los botones de acción */
-.button-container {
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
+/* Estilos para formularios del panel derecho */
+.date-form {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.action-button {
-    padding: 15px 30px;
-    border: none;
+.pagos-form, .corte-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #043A5B;
+}
+
+.form-input {
+    padding: 10px 15px;
+    border: 1px solid #A4B5CC;
     border-radius: 6px;
     font-family: 'Cabin', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.action-button { /* Estilos para los botones inferiores del formulario */
+    font-family: 'Cabin', sans-serif;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Estilos para montos */
+.amount {
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: #043A5B;
+}
+
+.card-info.total {
+    background: #043A5B;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    width: 200px; /* Ancho fijo para ambos botones */
-    flex-shrink: 0; /* Evita que los botones se encojan */
 }
 
-.pagos-button {
-    background-color: #607B92FF; /* gris */
+.card-info.total .amount {
+    color: white;
 }
 
-.corte-button {
-    background-color: #1DD75BFF; /* verde */
-}
-
-.action-button:hover {
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.action-button:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 /*--------------------------------------------------*/
 
 /* Estilos responsivos */
